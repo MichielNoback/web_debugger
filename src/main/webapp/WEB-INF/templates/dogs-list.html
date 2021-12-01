@@ -1,0 +1,29 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>A dogs' life</title>
+
+</head>
+<body>
+<h1 th:text="${'All ' + dogs.size() + ' dogs in the database'}">Offline title</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Breed</th>
+        <th>Gender</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="dog:${dogs}">
+        <td th:text="${dog.name}">_title_</td>
+        <td th:text="${dog.breed}">_year_</td>
+        <td th:text="${dog.gender}">_rating_</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
